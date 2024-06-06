@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plastic Waste Detection</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    body {
+        background-image: url('/static/ecoxplastic.png');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        height: 1000px;
+        margin: 0;
+    }
+    .split {
+        display: flex;
+        height: 100%;
+        overflow: hidden;
+    }
+    .split .left {
+        flex: 1;
+        background-image: url('/static/garbage-4277613_12801.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .split .right {
+        flex: 1;
+        background-image: url('/static/35232.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .content {
+        background-color: rgba(255, 255, 255, 0.307);
+        padding: 120px;
+    }
+    .col-md-5 {
+        position: relative;
+        z-index: 1;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+</style>
+</head>
+<body>
+<div class="split">
+    <div class="left"></div>
+    <div class="right"></div>
+</div>
+<div class="content">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="header">
+                    <h2 class="text-center my-4 text-primary">Plastic Waste Detection in the Environment</h2>
+                    <h4 class="text-center mb-0 text-secondary">Leveraging AI and Image Analysis for Effective Monitoring and Mitigation</h4>
+                    <br>
+                    <hr>
+                    <br>
+                </div>
+                <div class="form-content">
+                    <form action="/" method="post" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <input type="file" class="form-control" name="fileInput" accept=".jpg, .jpeg, .png">
+                        </div>
+                        <div class="mb-3">
+                            <select class="form-select" name="model">
+                                <option selected>Select the ML model</option>
+                                <option value="fasterrcnn_resnet50_fpn">Faster R-CNN ResNet-50 FPN</option>
+                                <option value="maskrcnn_resnet50_fpn">Mask R-CNN ResNet-50 FPN</option>
+                                <option value="retinanet_resnet50_fpn">RetinaNet ResNet-50 FPN</option>
+                            </select>                            
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-outline-primary">Submit</button>
+                        </div>
+                        <br>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
